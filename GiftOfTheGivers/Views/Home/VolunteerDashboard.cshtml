@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GiftOfTheGivers.Models.Volunteer>
+
+<h2>Volunteer Dashboard</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Skills</th>
+            <th>Availability</th>
+            <th>Task Assigned</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var volunteer in Model)
+        {
+            <tr>
+                <td>@volunteer.Name</td>
+                <td>@volunteer.Skills</td>
+                <td>@volunteer.Availability</td>
+                <td>@volunteer.TaskAssigned</td>
+                <td>
+                    <a asp-action="AssignTask" asp-route-id="@volunteer.Id">Assign Task</a>
+                    <a asp-action="SendMessage" asp-route-id="@volunteer.Id">Send Message</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

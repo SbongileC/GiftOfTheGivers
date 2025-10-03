@@ -1,0 +1,46 @@
+﻿@model GiftOfTheGivers.Models.IncidentReport
+
+<h2>Submit Incident Report</h2>
+
+<form asp-action="SubmitIncidentReport">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="IncidentType" class="control-label"></i> Incident Type:</label>
+        <select asp-for="IncidentType" class="form-control">
+            <option value="">Select Incident Type</option>
+            <option value="Flood">Flood</option>
+            <option value="Fire">Fire</option>
+            <option value="Earthquake">Earthquake</option>
+            <option value="Other">Other</option>
+        </select>
+        <span asp-validation-for="IncidentType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location" class="control-label"></i> Location:</label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></i> Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentDate" class="control-label"></i> Incident Date:</label>
+        <input asp-for="IncidentDate" class="form-control" type="date" />
+        <span asp-validation-for="IncidentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReporterName" class="control-label"></i> Reporter Name:</label>
+        <input asp-for="ReporterName" class="form-control" />
+        <span asp-validation-for="ReporterName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReporterContact" class="control-label"></i> Reporter Contact:</label>
+        <input asp-for="ReporterContact" class="form-control" />
+        <span asp-validation-for="ReporterContact" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+</form>

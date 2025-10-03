@@ -1,0 +1,46 @@
+﻿@model GiftOfTheGivers.Models.Volunteer
+
+<h2>Register as a Volunteer</h2>
+
+<form asp-action="RegisterVolunteer" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Skills" class="control-label"></label>
+        <input asp-for="Skills" class="form-control" />
+        <span asp-validation-for="Skills" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Availability" class="control-label"></label>
+        <input asp-for="Availability" class="form-control" />
+        <span asp-validation-for="Availability" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location" class="control-label"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TaskPreference" class="control-label">Task Preference:</label>
+        <select asp-for="TaskPreference" class="form-control">
+            <option value="">Select Task Preference</option>
+            <option value="Relief Distribution">Relief Distribution</option>
+            <option value="Disaster Response">Disaster Response</option>
+            <option value="Community Outreach">Community Outreach</option>
+            <option value="Other">Other</option>
+        </select>
+        <span asp-validation-for="TaskPreference" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </div>
+</form>
